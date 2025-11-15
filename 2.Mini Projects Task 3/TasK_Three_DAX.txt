@@ -1,0 +1,13 @@
+
+
+
+
+
+dim_Date = ADDCOLUMNS(
+    CALENDAR(MIN(fact_InternetSales[ShipDate]),MAX(fact_InternetSales[ShipDate])),
+    "Year",YEAR([Date]),
+    "Month",MONTH([Date]),
+    "MonthName",FORMAT([Date],"MMMM"),
+    "DayOfWeek",FORMAT([Date],"DDDD"),
+    "Quarter",FORMAT([Date],"Q"),
+    "YearQuarter",FORMAT([Date],"YYYY")&"/Q"&FORMAT([Date],"Q"))
